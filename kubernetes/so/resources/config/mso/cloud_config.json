@@ -1,0 +1,51 @@
+{
+  "cloud_config":
+  {
+    "identity_services":
+    {
+        "RAX_KEYSTONE":
+        {
+          "identity_url": "https://rackspace-api.gigaspaces.com:5000/v3",
+          "mso_id": "KEYSTONE_USER",
+          "mso_pass": "HASHED_KEYSTONE_PASSWORD",
+          "admin_tenant": "KEYSTONE_TENANT",
+          "member_role": "admin",
+          "tenant_metadata": true,
+          "identity_server_type": "KEYSTONE",
+          "identity_authentication_type": "USERNAME_PASSWORD"
+        }
+    },
+    "cloud_sites":
+    {
+         "ResearchClusterHeat":
+        {
+          "region_id": "BigSite",
+          "clli": "",
+          "aic_version": "3.0",
+          "identity_service_id": "RAX_KEYSTONE",
+          "platform": "OPENSTACK",
+          "orchestrator": "HEAT"
+        },
+        "Cloudify":
+        {
+          "region_id": "RegionOne",
+          "clli": "",
+          "aic_version": "3.0",
+          "identity_service_id": "RAX_KEYSTONE",
+          "cloudify_id": "Cloudify",
+          "platform": "OPENSTACK",
+          "orchestrator": "CLOUDIFY"
+        }
+    },
+    "cloudify_managers":
+    {
+        "Cloudify":
+        {
+          "cloudify_url": "http://10.239.0.186",
+          "username": "admin",
+          "password": "0FC48BD43A6E041CA3041DC8F9EF62CB",
+          "version": "17.6.30"
+        }
+    }
+  }
+}
